@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+    <title>Train Scheduler</title>
+</head>
+<body>
+<div class="container">
+
+    <!-- jumbotron -->
+    <div class="jumbotron" style="background-color: royalblue; color: white">
+            <h1 class="text-center">Train Schedule <i class="fas fa-train"></i>
+            </h1>
+            <h3 class="text-center">Look below for schedule!</h3>
+        </div>
+    <!-- current trains -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card-header" id = "current-time" style= "background-color: grey; color: white">Current Train Schedule</div>
+            <div class="card-body">
+                    <table class="table table-sm table-hover" id="train-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency (minutes)</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <tbody class="tableBody">
+                    </tbody>
+            </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- add train -->
+        <div class="card mb-4">
+            <div class="card-header"style= "background-color: grey; color: white">Add Train</div>
+            <div class="card-body">
+
+                <!-- entry form -->
+                <form>
+                    <div class="form-group">
+                        <label for="train-name">Train Name</label>
+                        <input class="form-control" id="train-name" placeholder="Dallas Mavs Party Train" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="destination-name">Destination</label>
+                        <input class="form-control" id="destination-name" placeholder="Dallas" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="train-time">First Train Time (HHMM-Military Time)</label>
+                        <input class="form-control" id="train-time" placeholder="23:15 PM" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="train-frequency">Frequency (minutes)</label>
+                        <input class="form-control" id="train-frequency" placeholder="27" type="text">
+                    </div>
+                    <button class="btn btn-primary float-left" style="background-color: grey" id="add-train-btn">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script src="logic.js"></script>
+    
+</body>
+</html>
